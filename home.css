@@ -51,14 +51,15 @@ header nav a:hover {
 #top-video iframe,
 #top-video video {
   width: 100%;
-  height: 100%;
+  height: 25vh;
   object-fit: cover;
   display: block;
+  overflow: hidden; 
 }
 
 /* — Section styling — */
 section {
-  padding: 60px 24px;
+  padding: 100px 50px;
 }
 section h2 {
   font-size: 2rem;
