@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GHOP Home </title>
+  <meta name="description" content="Free Church Website " />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,var(--bg),#071226);color:#e6eef6}
+    .container{max-width:1000px;margin:32px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:grid;place-items:center;font-weight:800}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    main{margin-top:28px}
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:20px;border-radius:16px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    h1{margin:0;font-size:clamp(1.6rem,3.6vw,2.4rem)}
+    p.lead{color:var(--muted);margin:8px 0 0}
+    .cta{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#022; font-weight:700;text-decoration:none}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+    .features{display:flex;flex-direction:column;gap:12px}
+    .feature{display:flex;gap:12px;align-items:flex-start}
+    .feature .dot{width:44px;height:44px;border-radius:10px;background:var(--glass);display:grid;place-items:center;font-weight:700}
+    footer{margin-top:28px;color:var(--muted);font-size:0.9rem;text-align:center}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:96px;object-fit:cover;border-radius:8px}
+    label{display:block;font-size:0.9rem;margin-bottom:6px;color:var(--muted)}
+    input[type="text"],input[type="email"],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);font-weight:700;cursor:pointer}
+    .row{display:flex;gap:12px}
+    @media(min-width:760px){.hero{grid-template-columns:1fr 420px}.grid{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(3,1fr)} }
+  </style>
+</head>
+<body>
+  <section id="imovie" style="margin-top:20px" class="card">
+  <h2>🎥 GHOP</h2>
+  <p style="color:var(--muted)">Watch some of my video projects and creative edits below.</p>
+
+      <div class="card" style="padding:8px">
+      <video width="100%" height="200" controls>
+        <source src="Movies/GHOP intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h4 style="margin-top:8px">Vacation Highlights</h4>
+    </div>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">GHOP</div>
+        <div>
+          <div style="font-weight:800">God's House Of Prayer Minitiries </div>
+          <div style="font-size:0.85rem;color:var(--muted)">Join Us this Sunday</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">Who we Are </a>
+        <a href="#gallery">Gallery</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card">
+          <h1>Welcome to GHOP </h1>
+          <p class="lead">God can turn it around for you. Give it to Him </p>
+          <a class="cta" href="#contact">Join Us</a>
+
+  
+              <div class="card" style="padding:12px">
+                <h3 style="margin:6px 0">Quick info</h3>
+                <p style="margin:0;color:var(--muted)">Replace images, update colors, or connect a custom domain later.</p>
+                <hr style="opacity:0.06;margin:12px 0" />
+                <div style="display:flex;gap:8px;flex-wrap:wrap">
+                  <div style="font-size:0.85rem;color:var(--muted)">🖼️ Images — replace the <code>src</code> URLs</div>
+                  <div style="font-size:0.85rem;color:var(--muted)">✏️ Edit — open in any text editor</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin-top:0">Contact</h3>
+          <form onsubmit="sendMail(event)">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" required />
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" required />
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Tell me about your project" required></textarea>
+            <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center">
+              <small style="color:var(--muted)">Or email: <a href="mailto:hello@example.com">hello@example.com</a></small>
+              <button type="submit">Send</button>
+            </div>
+          </form>
+        </aside>
+      </section>
+
+      <section id="about" style="margin-top:20px" class="card">
+        <h2>About</h2>
+        <p style="color:var(--muted)">Use this template as a starting point for a portfolio, small business site, or event page. It's intentionally minimal so it's easy to edit.</p>
+      </section>
+
+      <section id="gallery" style="margin-top:16px" class="card">
+        <h2>Gallery</h2>
+        <div class="gallery" id="galleryGrid">
+          <img src="https://source.unsplash.com/random/800x600?sig=1" alt="photo 1" />
+          <img src="https://source.unsplash.com/random/800x600?sig=2" alt="photo 2" />
+          <img src="https://source.unsplash.com/random/800x600?sig=3" alt="photo 3" />
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:16px" class="card">
+        <h2>Get started</h2>
+        <p style="color:var(--muted)">To publish: save this file as <code>index.html</code> and push it to a GitHub repo, or drag & drop to a free host. See the notes below for quick options.</p>
+        <div style="margin-top:12px;color:var(--muted)">
+          <strong>Quick hosting options</strong>
+          <ul>
+            <li>GitHub Pages — push to a repo and enable Pages on the main branch.</li>
+            <li>Netlify — drag & drop the file into the Sites area.</li>
+            <li>Vercel — import the repository and deploy.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="instructions" style="margin-top:20px" class="card">
+        <h2>Instructions: Using VS Code & Publishing</h2>
+        <ol style="color:var(--muted)">
+          <li><strong>Install VS Code:</strong> Download Visual Studio Code from <a href="https://code.visualstudio.com" target="_blank">code.visualstudio.com</a>.</li>
+          <li><strong>Open your folder:</strong> Launch VS Code → File → Open Folder → choose your project folder.</li>
+          <li><strong>Edit the site:</strong> Create or open <code>index.html</code> and make your changes. Save automatically with Ctrl+S (Cmd+S on Mac).</li>
+          <li><strong>Preview:</strong> Install the 'Live Server' extension → Right-click the HTML file → 'Open with Live Server' to preview in your browser.</li>
+          <li><strong>Add JavaScript:</strong> Create a new file named <code>script.js</code> and link it before the closing <code>&lt;/body&gt;</code> tag using <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>.</li>
+          <li><strong>Publish via GitHub Pages:</strong>
+            <ul>
+              <li>Create a GitHub account (if needed).</li>
+              <li>Create a new public repository.</li>
+              <li>Upload your <code>index.html</code>.</li>
+              <li>Go to Settings → Pages → Source → choose 'main branch' → Save.</li>
+              <li>Visit <code>https://yourusername.github.io/repositoryname</code> to see your live site.</li>
+            </ul>
+          </li>
+          <li><strong>Publish via Netlify (no GitHub needed):</strong>
+            <ul>
+              <li>Go to <a href="https://www.netlify.com" target="_blank">netlify.com</a>.</li>
+              <li>Sign up and log in.</li>
+              <li>Drag & drop your <code>index.html</code> file into the dashboard 'Sites' area.</li>
+              <li>Netlify automatically hosts it with a free subdomain (e.g., yourname.netlify.app).</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+    </main>
+
+    <footer>
+      Built with ♥ — edit this page and make it yours.
+    </footer>
+  </div>
+
+  <script>
+    function sendMail(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Website inquiry from ' + name);
+      const body = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+msg);
+      window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
+    }
+
+    (function(){
+      const grid = document.getElementById('galleryGrid');
+      if(!grid) return;
+    })();
+  </script>
+</body>
+</html>
