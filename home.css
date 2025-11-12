@@ -1,30 +1,119 @@
+*, *::before, *::after {
+  box‑sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans‑serif;
+  scroll-behavior: smooth;
+}
+body {
+  line-height: 1.6;
+  color: #111;                    /* dark text */
+  background-color: #fff;        /* light background */
+}
+
+/* — Header / Navigation — */
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
   position: sticky;
   top: 0;
-  background: rgba(15,23,36,0.9);
-  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
-
-.gallery img {
-  border-radius: 12px;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-.cta {
-  padding: 12px 20px;
-  border-radius: 12px;
-  background: linear-gradient(90deg, #06b6d4, #7c3aed);
-  color: #fff;
+header .brand {
+  font-size: 1.4rem;
   font-weight: 700;
-  transition: transform 0.2s;
+}
+header nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+header nav a:hover {
+  color: #0066ff; /* accent color – change to yours */
 }
 
-.cta:hover {
-  transform: scale(1.05);
+/* — Hero / Top section with video or background — */
+#top-video {
+  width: 100%;
+  height: 25vh;           /* takes ~1/4 of viewport height */
+  overflow: hidden;
+  position: relative;
 }
-h1 { font-size: 2.5rem; font-weight: 800; }
-h2 { font-size: 2rem; font-weight: 700; }
-p { font-size: 1rem; line-height: 1.6; }
+#top-video iframe,
+#top-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* — Section styling — */
+section {
+  padding: 60px 24px;
+}
+section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+section p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+
+/* — Card grid (for galleries, features) — */
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.card img {
+  width: 100%;
+  display: block;
+}
+.card-content {
+  padding: 20px;
+}
+.card-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+.card-content p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* — Footer — */
+footer {
+  padding: 40px 24px;
+  font-size: 0.9rem;
+  color: #777;
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+}
+footer a {
+  color: #0066ff;  /* that accent color */
+  text-decoration: none;
+}
