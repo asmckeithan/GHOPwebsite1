@@ -127,14 +127,31 @@
     <p>© 2025 God’s House of Prayer. All rights reserved. <a href="#">Privacy Policy</a></p>
   </footer>
 
-  <script>
+<header class="header">
+  <div class="brand">God's House of Prayer Ministries</div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="nav" id="nav-menu">
+    <a href="#about">Who We Are</a>
+    <a href="#events">Events</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<script>
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
-
-  // Optional: Animate hamburger into X
   hamburger.classList.toggle('open');
 });
 </script>
