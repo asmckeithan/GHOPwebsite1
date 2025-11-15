@@ -1,120 +1,136 @@
 *, *::before, *::after {
-  box‑sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 html {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans‑serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   scroll-behavior: smooth;
 }
+
 body {
   line-height: 1.6;
-  color: #111;                    /* dark text */
-  background-color: #fff;        /* light background */
+  color: #111; /* dark text */
+  background-color: #c35dda; /* light background */
 }
 
-/* — Header / Navigation — */
+/* -- Header / Navigation -- */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px;
-  position: sticky;
+  position: sticky; /* make the header sticky */
   top: 0;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(199, 117, 218, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 header .brand {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.6rem;
+  font-weight: 800;
 }
+
 header nav a {
-  margin-left: 24px;
+  margin-left: 20px;
   text-decoration: none;
   color: #111;
   font-weight: 600;
-  transition: color 0.2s;
-}
-header nav a:hover {
-  color: #0066ff; /* accent color – change to yours */
+  transition: color 0.3s;
 }
 
-/* — Hero / Top section with video or background — */
+header nav a:hover {
+  color: #9b40b5; /* accent color */
+}
+
+/* -- Hero / Top section with video -- */
 #top-video {
   width: 100%;
-  height: 25vh;           /* takes ~1/4 of viewport height */
+  height: 40vh; /* increased height for better visibility */
   overflow: hidden;
-  position: relative;
-}
-#top-video iframe,
-#top-video video {
-  width: 100%;
-  height: 25vh;
-  object-fit: cover;
-  display: block;
-  overflow: hidden; 
 }
 
-/* — Section styling — */
-section {
-  padding: 100px 50px;
+#top-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
+
+/* -- Section styling -- */
+section {
+  padding: 60px 20px;
+  text-align: center; /* center align text within sections */
+  max-width: 1200px;  /* Set a maximum width for better alignment */
+  margin: 0 auto;      /* Center the section horizontally */
+}
+
 section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 section p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #555;
-  max-width: 800px;
-  margin-bottom: 24px;
+  max-width: 600px;
+  margin: 0 auto 24px; /* center the paragraph and add margin */
 }
 
-/* — Card grid (for galleries, features) — */
+/* -- Card grid (for galleries, features) -- */
 .grid {
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 20px; /* Add margin to separate the grid from the heading */
 }
+
 .card {
-  background-color: #f9f9f9;
+  background-color: #a326c6; /* changed to white for a clean look */
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
+
 .card img {
   width: 100%;
   display: block;
 }
+
 .card-content {
-  padding: 20px;
+  padding: 15px;
 }
+
 .card-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
+
 .card-content p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #666;
 }
 
-/* — Footer — */
+/* -- Footer -- */
 footer {
   padding: 40px 24px;
   font-size: 0.9rem;
   color: #777;
   text-align: center;
   border-top: 1px solid #e6e6e6;
+  background-color: #6d2929; /* white background for the footer */
 }
+
 footer a {
-  color: #0066ff;  /* that accent color */
+  color: #0066ff; /* accent color */
   text-decoration: none;
 }
