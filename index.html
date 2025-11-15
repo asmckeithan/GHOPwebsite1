@@ -126,5 +126,17 @@
   <footer class="footer">
     <p>© 2025 God’s House of Prayer. All rights reserved. <a href="#">Privacy Policy</a></p>
   </footer>
+
+  <script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+
+  // Optional: Animate hamburger into X
+  hamburger.classList.toggle('open');
+});
+</script>
 </body>
 </html>
