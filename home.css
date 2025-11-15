@@ -79,7 +79,51 @@ header nav a::after {
 header nav a:hover::after {
   width: 100%;
 }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+}
 
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Mobile nav styles */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav.nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  nav.nav a {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  nav.nav.active {
+    display: flex;
+  }
+}
 /* Hero Section */
 .hero {
   width: 100%;
