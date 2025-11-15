@@ -139,7 +139,7 @@ header nav a:hover::after {
 
 /* About Section */
 #about {
-  padding: 120px 15%;
+  padding: 5% 15%;
   text-align: center;
   font-size: 25px;
 
@@ -160,7 +160,7 @@ header nav a:hover::after {
 
 /* Gallery Section */
 #gallery {
-  padding: 100px 10%;
+  padding: 5% 10%;
 }
 
 #gallery h2 {
@@ -184,6 +184,8 @@ header nav a:hover::after {
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   transition: 0.3s ease;
+  max-width: 400px;
+  width: 100%;
 }
 
 .card:hover {
