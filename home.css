@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -22,18 +22,17 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  background: rgba(0, 0, 0, 0.7); /* Darker background for contrast */
-  backdrop-filter: blur(12px);     /* Smooth glassy effect */
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
   color: #f0e7e7;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Subtle shadow */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   transition: background 0.3s ease;
 }
 
-/* Brand / Logo */
 header .brand {
   font-family: 'Great Vibes', cursive;
-  font-size: 4rem;                   /* Slightly smaller to fit nav */
+  font-size: 4rem;
   font-weight: 400;
   color: #a233eb;
   text-shadow: 
@@ -45,30 +44,27 @@ header .brand {
   transition: all 0.3s ease;
 }
 
-/* Navigation Links */
 header nav a {
   margin-left: 30px;
-  color: #fff;                       /* Bright white for readability */
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   font-size: 17px;
-  text-shadow: 1px 1px 2px #000;     /* Soft shadow for contrast */
+  text-shadow: 1px 1px 2px #000;
   transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
   position: relative;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Navigation Hover Effect */
 header nav a:hover {
-  color: #ad55dc;                     /* Golden glow on hover */
-  transform: scale(1.1);              /* Slight zoom effect */
+  color: #c048d8;
+  transform: scale(1.1);
   text-shadow: 
-      0 0 5px #ffd700,
-      0 0 10px #cc7fd4,
+      0 0 5px #a72fc0,
+      0 0 10px #ecebe4,
       0 0 15px #ffc700;
 }
 
-/* Optional: Golden underline on hover */
 header nav a::after {
   content: '';
   position: absolute;
@@ -76,7 +72,7 @@ header nav a::after {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background: #e2e0d2;
+  background: #b9b8af;
   transition: width 0.3s;
 }
 
@@ -84,43 +80,43 @@ header nav a:hover::after {
   width: 100%;
 }
 
-/* Elegant glow text class */
+/* Hero Section */
+.hero {
+  width: 100%;
+  padding: 170px 20px 50px;
+  text-align: center;
+  color: rgb(231, 205, 239);
+  background: none;
+  position: relative;
+  z-index: 2;
+}
+
 .elegant-glow {
   font-family: 'Great Vibes', cursive;
   font-size: 3rem;
   font-weight: 400;
-  color: #661691;
+  color: #a22dac;
   text-align: center;
   text-shadow: 
       0 0 5px #ffffff,
       0 0 10px #ffd700,
-      0 0 20px #ab5fc7,
+      0 0 20px #ffb700,
       0 0 30px #ffa500,
       0 0 40px #ff8c00;
   transition: all 0.3s ease;
 }
 
-/* Hero Section */
-.hero {
-  position: relative;
-  width: 100%;
-  padding: 170px 20px 20px; /* space at top */
-  text-align: center;
-  color: white;
-  background: none; /* no background, the video is separate */
-}
-
+/* VIDEO SECTION */
 #video-section {
   position: relative;
-  margin-top: 100px; /* Adjust this value to leave space for nav & hero */
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh; /* height of video section */
+  height: 80vh;
   overflow: hidden;
 }
 
-/* YouTube iframe */
 #youtube-container {
   width: 90%;
   max-width: 1200px;
@@ -134,61 +130,45 @@ header nav a:hover::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px; /* optional */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* About Section */
-#about {
-  padding: 5% 15%;
+/* Sections (About, Gallery, Contact) */
+.section {
+  padding: 100px 15%;
   text-align: center;
-  font-size: 25px;
-
 }
 
-#about h2 {
+#about h2, #events h2, #gallery h2, #contact h2 {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 20px;
 }
 
-#about p {
+#about p, #events p, #gallery p {
   font-size: 1.15rem;
   max-width: 800px;
   margin: 0 auto;
   opacity: 0.8;
 }
 
-/* Gallery Section */
-#gallery {
-  padding: 5% 10%;
-}
-
-#gallery h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 50px;
-}
-
-.grid {
+/* Gallery & Event Cards */
+.grid, .event-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
 }
-.events {
-  text-align: center;
-}
-.card {
+
+.card, .event-card {
   background: #fff;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   transition: 0.3s ease;
-  max-width: 400px;
-  width: 100%;
 }
 
-.card:hover {
+.card:hover, .event-card:hover {
   transform: translateY(-8px);
 }
 
@@ -210,18 +190,7 @@ header nav a:hover::after {
   opacity: 0.8;
 }
 
-/* Contact Section */
-#contact {
-  padding: 100px 15%;
-  text-align: center;
-}
-
-#contact h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
+/* Contact Form */
 #contact form {
   margin-top: 30px;
   display: flex;
@@ -231,7 +200,7 @@ header nav a:hover::after {
   margin-right: auto;
 }
 
-#contact input {
+#contact input, #contact textarea {
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -270,4 +239,79 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media screen and (max-width: 1024px) {
+  header {
+    padding: 15px 30px;
+  }
+  header .brand {
+    font-size: 3rem;
+  }
+  .hero {
+    padding: 100px 15px 40px;
+  }
+  .hero .elegant-glow {
+    font-size: 2.5rem;
+  }
+  #video-section {
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  header nav {
+    margin-top: 10px;
+  }
+  header nav a {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  .hero {
+    padding: 80px 10px 30px;
+  }
+  .hero .elegant-glow {
+    font-size: 2rem;
+  }
+  #video-section {
+    height: 50vh;
+    margin-top: 60px;
+  }
+  #about, #events, #gallery, #contact {
+    padding: 60px 5%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header .brand {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .hero .elegant-glow {
+    font-size: 1.8rem;
+  }
+  #video-section {
+    height: 40vh;
+    margin-top: 50px;
+  }
+  header nav a {
+    font-size: 14px;
+  }
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+  .card-content p {
+    font-size: 0.9rem;
+  }
+  #contact input, #contact textarea {
+    font-size: 0.95rem;
+  }
+  #contact button {
+    font-size: 1rem;
+  }
 }
