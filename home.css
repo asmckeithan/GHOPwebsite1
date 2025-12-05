@@ -22,9 +22,10 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.4);   /* Soft transparent white */
+
   backdrop-filter: blur(12px);
-  color: #f0e7e7;
+  color: #7d58c9;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   transition: background 0.3s ease;
@@ -46,11 +47,11 @@ header .brand {
 
 header nav a {
   margin-left: 30px;
-  color: #fff;
+  color: #6436d9;
   text-decoration: none;
   font-weight: 600;
   font-size: 17px;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: 1px 1px 2px #e7d447;
   transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
   position: relative;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -61,8 +62,8 @@ header nav a:hover {
   transform: scale(1.1);
   text-shadow: 
       0 0 5px #a72fc0,
-      0 0 10px #ecebe4,
-      0 0 15px #ffc700;
+      0 0 10px #c5b133,
+      0 0 15px #8e782b;
 }
 
 header nav a::after {
