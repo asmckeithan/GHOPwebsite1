@@ -1,4 +1,20 @@
-/* Base styles */
+/* ===============================
+   DESIGN SYSTEM
+================================ */
+:root {
+  --primary: #7a3eb1;
+  --accent: #e7c873;
+  --dark: #2e1a33;
+  --light: #f7f7f4;
+
+  --radius: 20px;
+  --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
+  --shadow-strong: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   RESET & BASE
+================================ */
 * {
   margin: 0;
   padding: 0;
@@ -6,215 +22,169 @@
 }
 
 body {
-  font-family: 'Georgia', sans-serif;
-  background-color: #f7f7f4;
-  color: #5a2c61;
-  line-height: 1.6;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.7;
 }
 
-/* HEADER */
+/* ===============================
+   HEADER
+================================ */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
+  z-index: 1000;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
-  background: rgba(255, 255, 255, 0.4);   /* Soft transparent white */
-
+  padding: 14px 40px;
+  background: rgba(255,255,255,0.75);
   backdrop-filter: blur(12px);
-  color: #7d58c9;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 header .brand {
   font-family: 'Great Vibes', cursive;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 400;
-  color: #a233eb;
-  text-shadow: 
-      0 0 5px #ffffff,
-      0 0 20px #ffd700,
-      0 0 50px #e6d5ec,
-      0 0 10px #dfa810,
-      0 0 40px #c39d04;
-  transition: all 0.3s ease;
+  color: var(--primary);
+  text-shadow: 0 4px 18px rgba(122,62,177,0.35);
 }
 
-header nav a {
-  margin-left: 30px;
-  color: #6436d9;
+nav.nav a {
+  margin-left: 28px;
+  color: #5b3a8c;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 17px;
-  text-shadow: 1px 1px 2px #e7d447;
-  transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
-  position: relative;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-header nav a:hover {
-  color: #c048d8;
-  transform: scale(1.1);
-  text-shadow: 
-      0 0 5px #a72fc0,
-      0 0 10px #c5b133,
-      0 0 15px #8e782b;
+nav.nav a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
 }
 
-header nav a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background: #b9b8af;
-  transition: width 0.3s;
-}
-
-header nav a:hover::after {
-  width: 100%;
-}
+/* ===============================
+   HAMBURGER MENU
+================================ */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   width: 30px;
-  height: 25px;
+  height: 22px;
   justify-content: space-between;
 }
 
 .hamburger span {
-  display: block;
   height: 3px;
-  background: #fff;
+  background: #333;
   border-radius: 2px;
   transition: 0.3s;
 }
 
-/* Mobile nav styles */
-@media screen and (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  nav.nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 70px;
-    left: 0;
-    padding: 20px 0;
-    z-index: 1000;
-  }
-
-  nav.nav a {
-    margin: 10px 0;
-    font-size: 18px;
-  }
-
-  nav.nav.active {
-    display: flex;
-  }
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
-/* Hero Section */
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===============================
+   HERO
+================================ */
 .hero {
-  width: 100%;
-  padding: 170px 20px 50px;
+  padding: 7rem 1.5rem 4rem;
   text-align: center;
-  color: rgb(231, 205, 239);
-  background: none;
-  position: relative;
-  z-index: 2;
 }
 
-.elegant-glow {
+.hero h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
-  font-weight: 400;
-  color: #a22dac;
-  text-align: center;
-  text-shadow: 
-      0 0 5px #ffffff,
-      0 0 10px #ffd700,
-      0 0 20px #ffb700,
-      0 0 30px #ffa500,
-      0 0 40px #ff8c00;
-  transition: all 0.3s ease;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--primary);
+  text-shadow: 0 6px 25px rgba(162,51,235,0.35);
 }
 
-/* VIDEO SECTION */
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+/* ===============================
+   VIDEO SECTION
+================================ */
 #video-section {
+  width: 100%;
+  height: 90vh;
+  margin: 6rem 0;
   position: relative;
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  overflow: hidden;
 }
 
 #youtube-container {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
   height: 100%;
+  border-radius: 0;
   overflow: hidden;
-  position: relative;
-  z-index: 0;
+  box-shadow: none;
 }
 
 #youtube-container iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* Sections (About, Gallery, Contact) */
+/* ===============================
+   SECTIONS
+================================ */
 .section {
-  padding: 100px 15%;
+  padding: 6rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
   text-align: center;
 }
 
-#about h2, #events h2, #gallery h2, #contact h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 20px;
+.section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
 }
 
-#about p, #events p, #gallery p {
-  font-size: 1.15rem;
+.section p {
   max-width: 800px;
-  margin: 0 auto;
-  opacity: 0.8;
+  margin: auto;
+  opacity: 0.85;
 }
 
-/* Gallery & Event Cards */
-.grid, .event-grid {
+/* ===============================
+   EVENTS & GALLERY
+================================ */
+.event-grid,
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
 }
 
-.card, .event-card {
-  background: #fff;
-  border-radius: 20px;
+.event-card,
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.card:hover, .event-card:hover {
-  transform: translateY(-8px);
+.event-card:hover,
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-strong);
 }
 
 .card img {
@@ -223,58 +193,99 @@ header nav a:hover::after {
 }
 
 .card-content {
-  padding: 20px;
+  padding: 1.5rem;
+}
+/* ===============================
+   DONATION SECTION
+================================ */
+.donate-section {
+  background: linear-gradient(135deg, #7a3eb1, #5d2f8b);
+  color: white;
+  text-align: center;
+  padding: 6rem 1.5rem;
 }
 
-.card-content h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+.donate-section h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
 }
 
-.card-content p {
-  opacity: 0.8;
+.donate-section p {
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.95;
 }
 
-/* Contact Form */
-#contact form {
-  margin-top: 30px;
+.donate-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.donate-card {
+  background: rgba(255,255,255,0.15);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, background 0.4s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.donate-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.25);
+}
+
+.donate-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ===============================
+   CONTACT FORM
+================================ */
+.contact-form {
+  max-width: 520px;
+  margin: 3rem auto 0;
   display: flex;
   flex-direction: column;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-#contact input, #contact textarea {
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
   font-size: 1rem;
 }
 
-#contact button {
-  padding: 15px;
+.contact-form button {
+  padding: 14px;
   border: none;
-  background: black;
+  background: var(--primary);
   color: white;
-  font-size: 1.1rem;
-  border-radius: 10px;
+  font-size: 1.05rem;
+  border-radius: 999px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-#contact button:hover {
-  background: #333;
+.contact-form button:hover {
+  background: #5d2f8b;
+  transform: translateY(-2px);
 }
 
-/* Footer */
+/* ===============================
+   FOOTER
+================================ */
 footer {
-  text-align: center;
-  padding: 40px;
   background: #111;
   color: white;
-  margin-top: 80px;
+  text-align: center;
+  padding: 3rem 1.5rem;
 }
 
 footer a {
@@ -282,180 +293,41 @@ footer a {
   text-decoration: none;
 }
 
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ----------------- RESPONSIVE ----------------- */
-@media screen and (max-width: 1024px) {
-  header {
-    padding: 15px 30px;
-  }
-  header .brand {
-    font-size: 3rem;
-  }
-  .hero {
-    padding: 100px 15px 40px;
-  }
-  .hero .elegant-glow {
-    font-size: 2.5rem;
-  }
-  #video-section {
-    height: 60vh;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-  header nav {
-    margin-top: 10px;
-  }
-  header nav a {
-    margin: 0 10px;
-    font-size: 16px;
-  }
-  .hero {
-    padding: 80px 10px 30px;
-  }
-  .hero .elegant-glow {
-    font-size: 2rem;
-  }
-  #video-section {
-    height: 50vh;
-    margin-top: 60px;
-  }
-  #about, #events, #gallery, #contact {
-    padding: 60px 5%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  header .brand {
-    font-size: 2rem;
-    text-align: center;
-  }
-  .hero .elegant-glow {
-    font-size: 1.8rem;
-  }
-  #video-section {
-    height: 40vh;
-    margin-top: 50px;
-  }
-  header nav a {
-    font-size: 14px;
-  }
-  .card-content h3 {
-    font-size: 1.2rem;
-  }
-  .card-content p {
-    font-size: 0.9rem;
-  }
-  #contact input, #contact textarea {
-    font-size: 0.95rem;
-  }
-  #contact button {
-    font-size: 1rem;
-  }
-
- /* Hamburger Menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  width: 30px;
-  height: 25px;
-  justify-content: space-between;
-  z-index: 1100;
-}
-
-.hamburger span {
-  display: block;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-/* Hamburger open animation */
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Mobile nav styles */
-@media screen and (max-width: 768px) {
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
   .hamburger {
     display: flex;
-    margin-top: 5px;
   }
 
   nav.nav {
     position: absolute;
-    top: 70px; /* below header */
+    top: 70px;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0,0,0,0.95);
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    max-height: 0;
     overflow: hidden;
-    max-height: 0; /* hide menu initially */
-    transition: max-height 0.4s ease, opacity 0.4s ease;
     opacity: 0;
-    z-index: 1000;
+    transition: all 0.4s ease;
   }
 
   nav.nav.active {
-    max-height: 300px; /* adjust if more links */
+    max-height: 300px;
     opacity: 1;
   }
 
   nav.nav a {
-    margin: 15px 0;
-    font-size: 18px;
-    color: #fff;
-    transition: color 0.3s;
-  }
-
-  nav.nav a:hover {
-    color: #ffd700;
+    color: white;
+    margin: 16px 0;
+    font-size: 1.1rem;
   }
 
   header {
     flex-direction: column;
-    align-items: center;
-    padding: 15px 20px;
   }
-
-  header .brand {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-
-  /* Hero and video adjustments */
-  .hero {
-    padding: 80px 15px 30px;
-  }
-
-  .hero .elegant-glow {
-    font-size: 2rem;
-  }
-
-  #video-section {
-    height: 50vh;
-    margin-top: 60px;
-  }
-
-  #about, #events, #gallery, #contact {
-    padding: 60px 10%;
-  }
-}
-
 }
