@@ -31,30 +31,54 @@
   </nav>
 </header>
 
-  <!-- HERO SECTION -->
+ <!-- HERO SECTION -->
 <section class="hero">
+  <!-- Background Video -->
+  <video id="heroVideo" autoplay muted loop>
+    <source src="assets/videos/worship.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay Content -->
   <div class="hero-content">
     <h1 class="elegant-glow">Welcome to God's House of Prayer</h1>
     <p class="elegant-glow">Join us in faith, hope, and love</p>
-    <a href="#about" class="join-btn">Join Us</a>
+    <a href="#about" class="btn join-btn">Join Us</a>
   </div>
-  
+
+  <!-- Background Music (Muted initially) -->
+  <audio id="bgMusic" muted loop>
+    <source src="music/worship.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 </section>
 
-<audio id="bgMusic" muted loop>
-  <source src="music/worship.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
 <script>
-let musicStarted = false; // flag so it only triggers once
+/* ================================================
+   Music Autoplay on Scroll with Fade-In
+================================================== */
+let musicStarted = false;
+const bgMusic = document.getElementById("bgMusic");
 
 window.addEventListener("scroll", () => {
   if (!musicStarted) {
-    const audio = document.getElementById("bgMusic");
-    audio.muted = false; // unmute
-    audio.play();        // start playback
-    musicStarted = true; // prevent retriggering
+    bgMusic.muted = false;
+    bgMusic.play();
+    bgMusic.volume = 0; // start silent
+
+    // Smooth fade-in
+    let vol = 0;
+    const fade = setInterval(() => {
+      vol += 0.05;
+      if (vol >= 1) {
+        bgMusic.volume = 1;
+        clearInterval(fade);
+      } else {
+        bgMusic.volume = vol;
+      }
+    }, 200);
+
+    musicStarted = true;
   }
 });
 </script>
