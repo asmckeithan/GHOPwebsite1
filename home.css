@@ -95,6 +95,28 @@ nav.nav a:hover {
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+/* ===============================
+   JOIN US BUTTON
+================================ */
+.join-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 14px 36px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7a3eb1, #5d2f8b);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(122, 62, 177, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.join-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(122, 62, 177, 0.45);
+}
 
 /* ===============================
    HERO
