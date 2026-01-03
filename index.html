@@ -41,24 +41,31 @@
   
 </section>
 
-<audio id="bgMusic" controls muted loop>
+<audio id="bgMusic" muted loop>
   <source src="music/worship.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
-<button onclick="startMusic()" class="join-btn">Start Music</button>
 
 <script>
-function startMusic() {
-  const audio = document.getElementById("bgMusic");
-  audio.muted = false;
-  audio.play();
-}
+let musicStarted = false; // flag so it only triggers once
+
+window.addEventListener("scroll", () => {
+  if (!musicStarted) {
+    const audio = document.getElementById("bgMusic");
+    audio.muted = false; // unmute
+    audio.play();        // start playback
+    musicStarted = true; // prevent retriggering
+  }
+});
+</script>
+
 </script>
 <!-- VIDEO SECTION -->
 <section id="video-section">
   <div id="youtube-container">
     <iframe
     id="ytplayer"
+    title="God's House of Prayer worship video"
     src="https://www.youtube.com/embed/Pjaml35Dbuw?autoplay=1&mute=1&enablejsapi=1"
     frameborder="0"
     allow="autoplay; encrypted-media"
