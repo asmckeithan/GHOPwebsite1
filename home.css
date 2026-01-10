@@ -125,15 +125,22 @@ nav.nav a:hover {
 
 
 .hero {
-  min-height: 100vh;
-  background-image: url("../gallery/cross-8441477_1280.jpg");
+  min-height: 100svh; /* mobile-safe */
+  background-image: url("./gallery/cross1.jpg");
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+}
+
+/* iOS Safari fallback */
+@supports (-webkit-touch-callout: none) {
+  .hero {
+    min-height: -webkit-fill-available;
+  }
 }
 
 .hero h1 {
