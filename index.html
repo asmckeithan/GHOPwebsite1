@@ -32,57 +32,56 @@
   </nav>
 </header>
 
- <!-- HERO SECTION -->
+  <!-- HERO SECTION -->
 <section class="hero">
-  <!-- Background Video -->
-  <video id="heroVideo" autoplay muted loop>
-    <source src="assets/videos/worship.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Overlay Content -->
   <div class="hero-content">
     <h1 class="elegant-glow">Welcome to God's House of Prayer</h1> <br>
     <p class="elegant-glow">Join us in faith, hope, and love</p>
-    <a href="#about" class="btn join-btn">Join Us</a>
+    <a href="#about" class="join-btn">Join Us</a>
   </div>
-
-  <!-- Background Music (Muted initially) -->
-  <audio id="bgMusic" muted loop>
-    <source src="music/worship.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  
 </section>
 
+<audio id="bgMusic" loop playsinline>
+  <source src="music/worship.mp3" type="audio/mpeg">
+</audio>
+
+
 <script>
-/* ================================================
-   Music Autoplay on Scroll with Fade-In
-================================================== */
 let musicStarted = false;
-const bgMusic = document.getElementById("bgMusic");
 
-window.addEventListener("scroll", () => {
-  if (!musicStarted) {
-    bgMusic.muted = false;
-    bgMusic.play();
-    bgMusic.volume = 0; // start silent
+function startMusic() {
+  if (musicStarted) return;
 
-    // Smooth fade-in
-    let vol = 0;
-    const fade = setInterval(() => {
-      vol += 0.05;
-      if (vol >= 1) {
-        bgMusic.volume = 1;
-        clearInterval(fade);
-      } else {
-        bgMusic.volume = vol;
-      }
-    }, 200);
+  const audio = document.getElementById("bgMusic");
 
-    musicStarted = true;
-  }
-});
+  audio.muted = false;
+  audio.volume = 0.7;
+
+  audio.play()
+    .then(() => {
+      musicStarted = true;
+      removeListeners();
+    })
+    .catch(err => {
+      console.log("Autoplay blocked:", err);
+    });
+}
+
+function removeListeners() {
+  window.removeEventListener("scroll", startMusic);
+  window.removeEventListener("touchstart", startMusic);
+  window.removeEventListener("wheel", startMusic);
+  window.removeEventListener("click", startMusic);
+}
+
+// Gesture listeners (mobile + desktop)
+window.addEventListener("scroll", startMusic, { once: true });
+window.addEventListener("touchstart", startMusic, { once: true });
+window.addEventListener("wheel", startMusic, { once: true });
+window.addEventListener("click", startMusic, { once: true });
 </script>
+
 
 </script>
 <!-- VIDEO SECTION -->
@@ -171,7 +170,7 @@ To Glorify God through the Lord Jesus Christ by balancing Evangelism, Biblical I
         Send us your photos! We love the memories you capture.
       </a>
         <p>See moments from our church community.</p>
-          <a href="gallery.html" class="upload-btn">View Gallery</a>
+          <button onclick="window.location.href='gallery.html'" class="upload-btn">View Gallery</button>
           
       <div class="card-content">
         <h3> Gallery </h3>
