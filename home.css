@@ -138,6 +138,16 @@ nav.nav a:hover {
   font-size: 1.1rem;
   opacity: 0.85;
 }
+.hero-content {
+  position: relative;
+  background-image: url('/gallery/cross-8441477_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: list-item;
+  justify-content: right;
+  align-items: flex-start;
+}
 
 /* ===============================
    VIDEO SECTION
