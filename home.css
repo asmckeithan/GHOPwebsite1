@@ -121,10 +121,8 @@ nav.nav a:hover {
 /* ===============================
    HERO
 ================================ */
-.hero {
-  padding: 7rem 1.5rem 4rem;
-  text-align: center;
-}
+
+
 
 .hero {
   min-height: 100vh;
@@ -213,7 +211,7 @@ nav.nav a:hover {
 
 .event-card,
 .card {
-  background: white;
+  background: #bc98dd 5px 3px 2px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
