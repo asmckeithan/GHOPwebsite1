@@ -126,6 +126,18 @@ nav.nav a:hover {
   text-align: center;
 }
 
+.hero {
+  min-height: 100vh;
+  background-image: url("../gallery/cross-8441477_1280.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
 .hero h1 {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -140,15 +152,9 @@ nav.nav a:hover {
 }
 .hero-content {
   position: relative;
-  background-image: url('/gallery/cross-8441477_1280.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: list-item;
-  justify-content: right;
-  align-items: flex-start;
+  padding: 2rem;
+  max-width: 600px;
 }
-
 /* ===============================
    VIDEO SECTION
 ================================ */
